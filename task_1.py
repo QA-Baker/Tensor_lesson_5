@@ -7,7 +7,9 @@
 
 
 def letter_stat(our_str):
-    # Здесь нужно написать код
+    letters_dict = {}
+    for char in our_str:
+        letters_dict[char] = letters_dict.get(char, 0) + 1
     return letters_dict
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ

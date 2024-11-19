@@ -7,7 +7,11 @@
 
 
 def repeats(our_str):
-    # Здесь нужно написать код
+    counts = {}
+    new_str = ''
+    for char in our_str:
+        counts[char] = counts.get(char, 0) + 1
+        new_str += f"{char}_{counts[char]}"
     return new_str
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ

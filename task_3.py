@@ -19,8 +19,17 @@
 
 
 def everything_for_your_cat(cats_data):
-    # Здесь нужно написать код
-    return our_str
+    owners = {}
+    for cat_name, cat_age, owner_name, owner_surname in cats_data:
+        full_name = f"{owner_name} {owner_surname}"
+        if full_name not in owners:
+            owners[full_name] = []
+        owners[full_name].append(f"{cat_name}, {cat_age}")
+
+    result = ""
+    for owner, cats in owners.items():
+        result += f"{owner}: {'; '.join(cats)}\n"
+    return result
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 

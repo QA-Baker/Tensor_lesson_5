@@ -14,7 +14,26 @@
 
 
 def scrabble(word):
-    # Здесь нужно написать код
+    # Определяем стоимость каждой группы букв
+    points_dict = {
+        1: "авеинорстё",
+        2: "дклмпу",
+        3: "бгья",
+        4: "йы",
+        5: "жзхцч",
+        8: "фшэю",
+        10: "щ",
+        15: "ъ"
+    }
+
+    # Создаем словарь для быстрого поиска стоимости буквы
+    score_map = {}
+    for points, letters in points_dict.items():
+        for letter in letters:
+            score_map[letter] = points
+
+    # Считаем сумму очков за слово
+    points = sum(score_map.get(char, 0) for char in word)
     return points
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
